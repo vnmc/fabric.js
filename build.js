@@ -310,22 +310,22 @@ else {
       } else {
         console.log('Built distribution to ' + distributionPath + 'fabric.js');
       }
+      console.log('Minification disabled in build.js - resolve later.');
+      // exec(mininfierCmd, function (error, output) {
+      //   if (error) {
+      //     console.error('Minification failed using', minifier, 'with', mininfierCmd);
+      //     process.exit(1);
+      //   }
+      //   console.log('Minified using', minifier, 'to ' + distributionPath + 'fabric.min.js');
 
-      exec(mininfierCmd, function (error, output) {
-        if (error) {
-          console.error('Minification failed using', minifier, 'with', mininfierCmd);
-          process.exit(1);
-        }
-        console.log('Minified using', minifier, 'to ' + distributionPath + 'fabric.min.js');
+      //   if (sourceMapFlags) {
+      //     console.log('Built sourceMap to ' + distributionPath + 'fabric.min.js.map');
+      //   }
 
-        if (sourceMapFlags) {
-          console.log('Built sourceMap to ' + distributionPath + 'fabric.min.js.map');
-        }
-
-        exec('gzip -c fabric.min.js > fabric.min.js.gz', function (error, output) {
-          console.log('Gzipped to ' + distributionPath + 'fabric.min.js.gz');
-        });
-      });
+      //   exec('gzip -c fabric.min.js > fabric.min.js.gz', function (error, output) {
+      //     console.log('Gzipped to ' + distributionPath + 'fabric.min.js.gz');
+      //   });
+      // });
 
       // Always build requirejs AMD module in fabric.require.js
       // add necessary requirejs footer code to filesToInclude if we haven't before
